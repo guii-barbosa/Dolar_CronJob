@@ -1,0 +1,14 @@
+-- Active: 1717755752579@@pg-75b7af5-guibarbosasilva2016-b6e2.e.aivencloud.com@14079@defaultdb
+CREATE TABLE cotacao_dolar (
+    id SERIAL PRIMARY KEY,
+    data DATE,
+    hora TIME,
+    cotacao DECIMAL(10, 2)
+);
+
+CREATE OR REPLACE PROCEDURE INSERIR_VALOR_DOLAR(P_DATA DATE, P_HORA TIME, P_COTACAO DECIMAL(10,2))
+LANGUAGE 'plpgsql' AS $$
+BEGIN
+    INSERT INTO COTACAO_DOLAR(DATA, HORA, COTACAO)
+    VALUES(P_DATA, P_HORA, P_COTACAO);
+END;$$
