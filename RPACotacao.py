@@ -33,7 +33,6 @@ try:
     print("conexão estabelecida com sucesso!")
     cursor = connection.cursor()
     
-    print((data, hora, cotacao_dolar))
     cursor.execute('CALL INSERIR_VALOR_DOLAR(%s, %s, %s)', (data, hora, cotacao_dolar))
     connection.commit()
     print("Dados inseridos com sucesso!")
